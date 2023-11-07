@@ -1,0 +1,10 @@
+<!-- app/views/events/show.html.erb -->
+
+<h1><%= @event.title %></h1>
+<p>Date de début : <%= @event.start_date %></p>
+<p>Durée : <%= @event.duration %> minutes</p>
+<p>Prix : <%= number_to_currency(@event.price) %></p>
+<p>Lieu : <%= @event.location %></p>
+<p>Description : <%= @event.description %></p>
+<p>organisateur : <%= @event.admin.first_name %></p>
+<!-- Ajoutez d'autres informations de l'événement ici -->
