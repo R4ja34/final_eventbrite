@@ -1,6 +1,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.action_mailer.default_url_options = { :host => ' https://the-final-eventbrite-6e927316ae7c.herokuapp.com' }
   ActionMailer::Base.smtp_settings = {
   :user_name => ENV['MAILJET_LOGIN'],
   :password => ENV['MAILJET_PWD'],
