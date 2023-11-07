@@ -11,8 +11,9 @@ class EventsController < ApplicationController
   def create
     if user_signed_in?
       @event = current_user.events.build(event_params)
+      @event.admin_id = current_user.id
       if @event.save
-        redirect_to events_index_path, notice: "Événement créé avec succès."
+        redirect_to events_path, notice: "Événement créé avec succès."
       else
         render :new
       end
@@ -42,7 +43,7 @@ class EventsController < ApplicationController
   private
   
   def event_params
-    params.require(:event).permit(:title, :description, :start_date, :price, :location).merge(admin: current_user)
+    params.require(:event).permit(:title, :description, :start_date, :duration, :price, :location, :admin)
   end
   
 end

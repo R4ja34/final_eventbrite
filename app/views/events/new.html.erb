@@ -1,4 +1,15 @@
 <%= form_for @event do |f| %>
+  <% if @event.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@event.errors.count, "erreur") %> empêche(nt) la sauvegarde de cet événement :</h2>
+      <ul>
+        <% @event.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="form-group">
     <%= f.label :title %>
     <%= f.text_field :title, class: "form-control" %>
@@ -31,5 +42,6 @@
 
   <div class="form-group">
     <%= f.submit "Créer l'Événement", class: "btn btn-primary" %>
+    
   </div>
 <% end %>
