@@ -19,3 +19,11 @@
     <% end %>
   </div>
 </div>
+
+<% if user_signed_in? %>
+  <div class="container">
+    <div class="text-center">
+      <%= link_to "Créer un nouvel Événement", new_event_path, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
