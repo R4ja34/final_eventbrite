@@ -1,0 +1,24 @@
+<div class="container">
+  <h1 class="my-4">Profil de l'utilisateur</h1>
+  
+  <div class="row">
+    <div class="col-md-6">
+      <p><strong>Email :</strong> <%= @user.email %></p>
+      <p><strong>Nom :</strong> <%= @user.first_name %></p>
+      <p><strong>Prénom :</strong> <%= @user.last_name %></p>
+      <% if current_user == @user %>
+        <p><%= link_to "Modifier le profil", edit_user_registration_path, class: "btn btn-primary" %></p>
+      <% end %>
+    </div>
+  </div>
+  
+<h2>Événements organisés par cet utilisateur :</h2>
+<% if @user.administered_events.any? %>
+  <ul>
+    <% @user.administered_events.each do |event| %>
+      <li><%= link_to event.title, event %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Cet utilisateur n'a pas encore organisé d'événements.</p>
+<% end %>

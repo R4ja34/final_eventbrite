@@ -1,18 +1,30 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <%= link_to "THE EVENT BRITE", root_path, class: "navbar-brand" %>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav d-flex">
-        <% if user_signed_in? %>
-            <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: {turbo_method: :delete} %>
-        <% else %>
-          <%= link_to "Se connecter", new_user_session_path, class: "nav-link" %>
-          <%= link_to "S'inscrire", new_user_registration_path, class: "nav-link" %>
-        <% end %>
-      </div>
-    </div>
+  <%= link_to "TheEventbrite", root_path, class: "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav ml-auto"> <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "deconnexion", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: "nav-link btn btn-sm" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Mon Profil", user_path(current_user), class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Secret Page", static_pages_secret_path, class: "nav-link btn btn-sm" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Créer un nouvel Événement", new_event_path, class: "nav-link btn btn-sm" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "connexion", new_user_session_path, class: "nav-link btn btn-sm" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "inscription", new_user_registration_path, class: "nav-link btn btn-sm" %>
+        </li>
+      <% end %>
+    </ul>
   </div>
 </nav>

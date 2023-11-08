@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # get 'users/show'
   # get 'attendances/index'
   # get 'attendances/new'
   # get 'attendances/show'
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   root "events#index"
   devise_for :users
   resources :events
+  resources :users
   resources :attendances
 
 

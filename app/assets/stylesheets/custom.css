@@ -1,56 +1,185 @@
-/* app/assets/stylesheets/custom.css */
+/* CSS général qui s'applique à toutes les pages */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
 
-/* Définissez les styles pour les cartes avec les couleurs de l'arc-en-ciel */
-.card {
+
+/* Style the navbar */
+.navbar {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e7e9ed;
+  padding: 20px 0;
+}
+
+/* Style the navbar brand */
+.navbar-brand {
+  color: #343a40;
+  font-weight: bold;
+  font-size: 18px;
+  padding-left: 0;
+}
+
+/* Style the navbar toggle button */
+.navbar-toggler {
+  background-color: transparent;
   border: none;
-  transition: transform 0.2s;
-  margin-bottom: 20px;
+  padding: 0;
+  cursor: pointer;
 }
 
-.card:hover {
-  transform: scale(1.05);
+/* Style the navbar toggle button icon */
+.navbar-toggler-icon {
+  width: 24px;
+  height: 24px;
+  background-color: #343a40;
+  fill: #343a40;
 }
 
-.card-title {
+/* Style the navbar navigation links */
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.navbar-nav a {
+  color: #343a40;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.navbar-nav a:hover {
+  background-color: #e7e9ed;
+}
+
+/* Style the dropdown menu */
+.dropdown-menu {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 5px;
+  list-style: none;
+  font-size: 14px;
+}
+
+.dropdown-menu li {
+  margin-bottom: 5px;
+}
+
+.dropdown-menu a {
+  color: #343a40;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background-color: #e7e9ed;
+}
+
+
+
+/* CSS spécifique à la page de connexion */
+.login-page .container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.login-page .form-group {
+  margin-bottom: 1rem;
+}
+
+.login-page .col-form-label {
+  font-weight: 700;
+}
+
+.login-page .form-control {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+.login-page .btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login-page .btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-container {
+  background-color: #fff;
+  padding: 20px 0;
+}
+
+.blog-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e7e9ed;
+  padding: 20px 0;
+}
+
+.blog-title {
+  font-size: 24px;
   font-weight: bold;
 }
 
+.card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 12px;
+}
+
+.card-title {
+  margin-bottom: 10px;
+}
+
 .card-text {
-  color: #6c757d;
+  margin-bottom: 20px;
 }
 
-/* Styles pour les couleurs de l'arc-en-ciel */
-.card.red {
-  background-color: #943333; /* Rouge */
-  color: white;
-}
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
 
-.card.orange {
-  background-color: #9c6227; /* Orange */
-  color: white;
-}
+  .blog-container {
+    padding: 0;
+  }
 
-.card.yellow {
-  background-color: #b3b32e; /* Jaune */
-  color: black; /* Changer la couleur du texte pour le jaune */
-}
+  .row {
+    flex-direction: column;
+  }
 
-.card.green {
-  background-color: #36a736; /* Vert */
-  color: white;
-}
-
-.card.blue {
-  background-color: #2626a7; /* Bleu */
-  color: white;
-}
-
-.card.indigo {
-  background-color: #532b70; /* Indigo */
-  color: white;
-}
-
-.card.violet {
-  background-color: #8e55c4; /* Violet */
-  color: white;
+  .col-lg-4 {
+    width: 100%;
+  }
 }
