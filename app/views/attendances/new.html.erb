@@ -1,2 +1,9 @@
 <h1>Attendances#new</h1>
 <p>Find me in app/views/attendances/new.html.erb</p>
+
+
+<%= form_with(model: [@event, @attendance]) do |form| %>
+  <!-- Ajoute les champs nécessaires pour l'inscription -->
+  <!-- Intègre le checkout Stripe -->
+  <%= form.submit 'Payer et rejoindre l\'événement' %>
+<% end %>

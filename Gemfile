@@ -6,6 +6,12 @@ gem 'devise'
 
 gem 'faker'
 
+gem 'table_print'
+
+gem 'stripe'
+
+gem 'dotenv-rails'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.1"
 
