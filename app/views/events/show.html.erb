@@ -13,6 +13,6 @@
       <p><strong>Organisateur :</strong> <%= @event.admin.first_name %></p>
       <!-- Ajoutez d'autres informations de l'événement ici -->
     </div>
-    <%= button_to "Passer commande (NEXT GEN)", checkout_create_path(total: @event.price), class: "btn btn-primary", data: {turbo: false} %>
+    <%= button_to "Passer commande (NEXT GEN)", checkout_create_path(total: @event.price, event_id: @event.id), class: "btn btn-primary", data: {turbo: false} %>
   </div>
 </div>
