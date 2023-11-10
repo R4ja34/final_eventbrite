@@ -14,7 +14,7 @@
       <!-- Ajoutez d'autres informations de l'événement ici -->
     </div>
     
-    <!-- Lien pour voir tous les participants -->
+    <!-- Lien pour voir tous les participants; apres path tous ce qui a dans les () permet de récuperer des params qui vont etre renvoyer a un autres controller -->
     <%= link_to "Voir les participations", event_attendances_path(event_id: @event.id, event_title: @event.title) %>
     <!-- Bouton pour passer commande -->
     <%= button_to "Passer commande (NEXT GEN)", checkout_create_path(total: @event.price, event_id: @event.id), class: "btn btn-primary", data: {turbo: false} %>
