@@ -14,9 +14,10 @@ Rails.application.routes.draw do
   get 'static_pages/secret'
   root "events#index"
   devise_for :users
-  resources :events
+  resources :events do
+    resources :attendances
+  end
   resources :users
-  resources :attendances
 
   scope '/checkout' do
     post 'create', to: 'checkout#create', as: 'checkout_create'

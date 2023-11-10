@@ -1,2 +1,8 @@
-<h1>Checkout#success</h1>
-<p>Find me in app/views/checkout/susses.html.erb</p>
+<h1>Paiement réussi !</h1>
+<p>Merci <%= @user.email %> pour votre participation à l'événement <%= Event.find(@event_id).title %>.</p>
+<p>Informations de paiement :</p>
+<ul>
+  <li>ID Stripe : <%= @stripe_id %></li>
+  <li>Montant payé : <%= @payment_intent.amount_received / 100 %> <%= @payment_intent.currency.upcase %></li>
+</ul>
+<p>Vous pouvez revenir à la <a href="<%= root_path %>">page d'accueil</a>.</p>
