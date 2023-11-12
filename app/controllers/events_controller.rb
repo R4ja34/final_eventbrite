@@ -13,12 +13,15 @@ class EventsController < ApplicationController
       @event = current_user.events.build(event_params)
       @event.admin_id = current_user.id
       if @event.save
-        redirect_to events_path, notice: "Événement créé avec succès."
+        redirect_to events_path(@event), notice: 'Événement créé avec succès.'
       else
+        # @event.errors.full_messages.each do |message|
+        #   flash.now[:error] = message
+        # end
         render :new
       end
     else
-      redirect_to new_user_session_path, notice: "Vous devez être connecté pour créer un nouvel événement."
+      redirect_to new_user_session_path(@event), notice: "Vous devez être connecté pour créer un nouvel événement."
     end
   end
   
